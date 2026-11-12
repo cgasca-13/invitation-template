@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+const fotos = Array.from({ length: 6 }, (_, index) => `/photos/foto (${index + 1}).jpeg`);
 
 export default function Hero() {
   const [fotoActual, setFotoActual] = useState(1);
 
+  useEffect(() => {
+    fotos.forEach((foto) => {
+      const imagen = new Image();
+      imagen.src = foto;
+    });
+  }, []);
+
   const cambiarFoto = () => {
-    setFotoActual((foto) => (foto === 6 ? 1 : foto + 1));
+    setFotoActual((foto) => (foto === fotos.length ? 1 : foto + 1));
   };
 
   return (
@@ -75,7 +84,7 @@ export default function Hero() {
             <motion.button
               type="button"
               onClick={cambiarFoto}
-              aria-label={`Cambiar foto. Mostrando foto ${fotoActual} de 6`}
+              aria-label={`Cambiar foto. Mostrando foto ${fotoActual} de ${fotos.length}`}
               initial={{ opacity: 1, y: 40, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
@@ -91,7 +100,7 @@ export default function Hero() {
                 initial={{ opacity: 0.4, scale: 0.98 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.35, ease: "easeOut" }}
-                src={`/photos/foto (${fotoActual}).jpeg`}
+                src={fotos[fotoActual - 1]}
                 alt="Camila Contreras Rojas"
                 className="h-[430px] w-[320px] object-cover object-center grayscale-[3%] brightness-[1.10] contrast-[1.02] md:h-[550px] md:w-[400px]"
               />
