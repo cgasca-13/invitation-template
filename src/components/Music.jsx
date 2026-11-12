@@ -21,7 +21,7 @@ export default function Music() {
 
       <button
         onClick={toggleMusic}
-        className="bg-transparent text-[#8C7F70] px-4 py-2 rounded-full"
+        className="bg-transparent text-[#806b57] px-4 py-2 rounded-full"
       >
         {playing ? <CiPause1 size={20} /> : <FaPlay size={20} />}
       </button>

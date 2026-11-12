@@ -7,9 +7,9 @@ function DressCode() {
       className=" 
   w-full py-12 px-6
   bg-gradient-to-b 
-  from-[#E8DCCB]/80
-  via-[#F3EADF] 
-  to-[#E8DCCB]/80
+  from-[#ead7c0]/80
+  via-[#faf1e7] 
+  to-[#ead7c0]/80
   text-center
 "
     >
@@ -20,7 +20,7 @@ function DressCode() {
         viewport={{ once: true }}
         className="text-lg md:text-xl px-6 "
       >
-        <span className="font-serif text-[#2E6515] font-semibold">
+        <span className="font-serif text-[#00295C] font-semibold">
           {" "}
           Código de vestimenta
         </span>
@@ -31,7 +31,7 @@ function DressCode() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="origin-center h-[2px] w-36 bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent"
+          className="origin-center h-[2px] w-36 bg-gradient-to-r from-transparent via-[#D4B088] to-transparent"
         />
       </div>
       <motion.p
@@ -41,7 +41,7 @@ function DressCode() {
         viewport={{ once: true }}
         className=" md:text-xl px-6 mt-1"
       >
-        <span className="text-lg font-serif text-[#8C7F70] font-normal">
+        <span className="text-lg font-serif text-[#806b57] font-normal">
           {" "}
           Norteña
         </span>
@@ -70,7 +70,7 @@ function DressCode() {
         viewport={{ once: true }}
         className=" md:text-xl px-6 mt-1"
       >
-        <span className="text-lg font-serif text-[#8C7F70] font-normal">
+        <span className="text-lg font-serif text-[#806b57] font-normal">
           {" "}
           Sombrero o Tejana
         </span>

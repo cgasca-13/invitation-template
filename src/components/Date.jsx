@@ -2,13 +2,13 @@ import { motion } from "framer-motion";
 
 export default function Date() {
   return (
-    <section className="relative overflow-hidden bg-[#0D0B0C] px-6 py-24 text-[#F5F1EA] md:px-12 md:py-36">
+    <section className="relative overflow-hidden bg-[#00295C] px-6 py-24 text-[#faf1e7] md:px-12 md:py-36">
 
       {/* Burgundy glow */}
-      <div className="absolute left-[-150px] top-1/2 h-[350px] w-[350px] -translate-y-1/2 rounded-full bg-[#4A1118]/40 blur-[120px]" />
+      <div className="absolute left-[-150px] top-1/2 h-[350px] w-[350px] -translate-y-1/2 rounded-full bg-[#173f6e]/40 blur-[120px]" />
 
       {/* Golden glow */}
-      <div className="absolute right-[-100px] top-[20%] h-[250px] w-[250px] rounded-full bg-[#B28B5C]/10 blur-[100px]" />
+      <div className="absolute right-[-100px] top-[20%] h-[250px] w-[250px] rounded-full bg-[#D4B088]/10 blur-[100px]" />
 
       {/* Decorative horizontal line */}
       <motion.div
@@ -16,7 +16,7 @@ export default function Date() {
         whileInView={{ scaleX: 1 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
         viewport={{ once: true }}
-        className="absolute left-1/2 top-12 h-px w-[80%] origin-center -translate-x-1/2 bg-[#B28B5C]/20"
+        className="absolute left-1/2 top-12 h-px w-[80%] origin-center -translate-x-1/2 bg-[#D4B088]/20"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl">
@@ -27,15 +27,15 @@ export default function Date() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
-          className="mb-16 flex items-center justify-center gap-3"
+          className="mb-6 flex items-center justify-center gap-3"
         >
-          <span className="h-px w-8 bg-[#B28B5C]" />
+          <span className="h-px w-8 bg-[#D4B088]" />
 
-          <p className="text-[10px] uppercase tracking-[0.4em] text-[#B28B5C]">
-            La celebración
+          <p className="text-[10px] uppercase tracking-[0.4em] text-[#D4B088]">
+            FECHA Y LUGAR
           </p>
 
-          <span className="h-px w-8 bg-[#B28B5C]" />
+          <span className="h-px w-8 bg-[#D4B088]" />
         </motion.div>
 
 
@@ -50,22 +50,19 @@ export default function Date() {
             viewport={{ once: true }}
             className="text-center md:text-right"
           >
-            <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#F5F1EA]/40">
-              La fecha
-            </p>
 
             <div className="flex flex-col items-center md:items-end">
 
-              <span className="font-serif text-8xl leading-none text-[#F5F1EA] md:text-9xl">
-                16
+              <span className="font-serif text-8xl leading-none text-[#faf1e7] md:text-9xl">
+                19
               </span>
 
-              <span className="mt-2 font-serif text-3xl tracking-[0.15em] text-[#B28B5C]">
-                OCTUBRE
+              <span className="mt-2 font-serif text-3xl tracking-[0.15em] text-[#D4B088]">
+                DICIEMBRE
               </span>
 
-              <span className="mt-2 text-xs uppercase tracking-[0.35em] text-[#F5F1EA]/50">
-                Viernes · 2:30 PM
+              <span className="mt-2 text-xs uppercase tracking-[0.35em] text-[#faf1e7]/50">
+                SÁBADO · 2:00 PM
               </span>
 
             </div>
@@ -78,7 +75,7 @@ export default function Date() {
             whileInView={{ scaleY: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="hidden h-40 w-px origin-top bg-[#B28B5C]/30 md:block"
+            className="hidden h-40 w-px origin-top bg-[#D4B088]/30 md:block"
           />
 
           {/* LOCATION */}
@@ -89,30 +86,55 @@ export default function Date() {
             viewport={{ once: true }}
             className="text-center md:text-left"
           >
-            <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#F5F1EA]/40">
-              El lugar
+            <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#faf1e7]/40">
+              Lugar
             </p>
 
-            <h2 className="font-serif text-4xl leading-tight text-[#F5F1EA] md:text-5xl">
-             SALÓN JARDÍN
+            <h2 className="font-serif text-4xl leading-tight text-[#faf1e7] md:text-5xl">
+              Parroquia
               <br />
-              <span className="text-3xl text-[#B28B5C]/80">
-                 “SAN PASCUAL”
+              <span className="text-3xl text-[#D4B088]/80">
+                de la Santa Cruz
               </span>
             </h2>
 
-            <p className="mt-4 text-sm text-[#F5F1EA]/50">
-              Morelia, Michoacán
+            <p className="mt-4 text-sm text-[#faf1e7]/50">
+              Zinapécuaro, Michoacán
             </p>
 
-            {/* Location button */}
             <motion.a
-              href="https://www.google.com/maps/place/SAL%C3%93N+JARD%C3%8DN+%E2%80%9CSAN+PASCUAL%E2%80%9D/@19.6990605,-101.2779392,16.02z/data=!4m6!3m5!1s0x842d095a5282eb63:0xa132c8d2413b0155!8m2!3d19.6968155!4d-101.2668012!16s%2Fg%2F11hcysbmsr?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
+              href="https://maps.app.goo.gl/NvYd87F17USmFyW58"
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ x: 5 }}
               transition={{ duration: 0.2 }}
-              className="mt-7 inline-flex items-center gap-3 border-b border-[#B28B5C]/40 pb-2 text-[10px] uppercase tracking-[0.25em] text-[#B28B5C]"
+              className="mt-7 inline-flex items-center gap-3 border-b border-[#D4B088]/40 pb-2 text-[10px] uppercase tracking-[0.25em] text-[#D4B088]"
             >
-              Ver ubicación
+              Ver iglesia en Maps
+              <span className="text-base">→</span>
+            </motion.a>
+
+            <p className="my-3 mt-8 text-[10px] uppercase tracking-[0.35em] text-[#faf1e7]/40">
+              Recepción
+            </p>
+
+            <h2 className="font-serif text-4xl leading-tight text-[#faf1e7] md:text-5xl">
+              Salón Los Parajes
+              <br />
+              <span className="text-3xl text-[#D4B088]/80">
+                Col. Félix Ireta, calle Nardos
+              </span>
+            </h2>
+
+            <motion.a
+              href="https://maps.app.goo.gl/YbKXLCviUcHQ1RVj8"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ x: 5 }}
+              transition={{ duration: 0.2 }}
+              className="mt-4 inline-flex items-center gap-3 border-b border-[#D4B088]/40 pb-2 text-[10px] uppercase tracking-[0.25em] text-[#D4B088]"
+            >
+              Ver salón en Maps
               <span className="text-base">→</span>
             </motion.a>
 

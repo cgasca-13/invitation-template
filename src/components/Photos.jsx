@@ -3,15 +3,15 @@ import { motion } from "framer-motion";
 
 function Photos() {
   return (
-    <section className="px-6 text-center bg-[#F2F2F3]/50 py-4">
-      <p className="font-serif text-xl text-[#2E6515]">Comparte tus fotos</p>
+    <section className="px-6 text-center bg-[#faf1e7]/70 py-4">
+      <p className="font-serif text-xl text-[#00295C]">Comparte tus fotos</p>
       <div className="flex justify-center mt-2">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="origin-center h-[2px] w-36 bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent"
+          className="origin-center h-[2px] w-36 bg-gradient-to-r from-transparent via-[#D4B088] to-transparent"
         />
       </div>
       <p className="text-sm text-gray-600 mt-2 max-w-sm mx-auto">
