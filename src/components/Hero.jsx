@@ -1,10 +1,14 @@
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { FiVolume2, FiVolumeX } from "react-icons/fi";
+import { useEffect, useRef, useState } from "react";
 
-const fotos = Array.from({ length: 6 }, (_, index) => `/photos/foto (${index + 1}).jpeg`);
+const fotos = Array.from({ length: 5 }, (_, index) => `/photos/foto (${index + 1}).jpeg`);
+const musica = "/music/Anna of the North - Lovers (from To All the Boys Ive Loved Before).mp3";
 
 export default function Hero() {
   const [fotoActual, setFotoActual] = useState(1);
+  const [musicaSilenciada, setMusicaSilenciada] = useState(false);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     fotos.forEach((foto) => {
@@ -13,12 +17,64 @@ export default function Hero() {
     });
   }, []);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return undefined;
+
+    audio.volume = 0.6;
+
+    const reproducirMusica = () => {
+      audio.play().catch(() => {
+        // El navegador puede requerir una interacción antes de reproducir audio.
+      });
+    };
+
+    reproducirMusica();
+    window.addEventListener("pointerdown", reproducirMusica, { once: true });
+    window.addEventListener("keydown", reproducirMusica, { once: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", reproducirMusica);
+      window.removeEventListener("keydown", reproducirMusica);
+      audio.pause();
+      audio.currentTime = 0;
+    };
+  }, []);
+
   const cambiarFoto = () => {
     setFotoActual((foto) => (foto === fotos.length ? 1 : foto + 1));
   };
 
+  const alternarMusica = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const nuevoEstado = !musicaSilenciada;
+    audio.muted = nuevoEstado;
+    setMusicaSilenciada(nuevoEstado);
+
+    if (!nuevoEstado) {
+      audio.play().catch(() => {
+        // El navegador puede requerir una interacción antes de reproducir audio.
+      });
+    }
+  };
+
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#00295C] text-[#faf1e7]">
+      <audio ref={audioRef} src={musica} loop preload="auto" />
+
+      <button
+        type="button"
+        onClick={alternarMusica}
+        aria-label={musicaSilenciada ? "Activar música" : "Silenciar música"}
+        aria-pressed={musicaSilenciada}
+        title={musicaSilenciada ? "Activar música" : "Silenciar música"}
+        className="fixed right-6 top-6 z-[100] rounded-full border border-[#D4B088]/50 bg-[#00295C]/75 p-3 text-[#D4B088] shadow-lg backdrop-blur-sm transition hover:bg-[#173f6e] focus:outline-none focus:ring-2 focus:ring-[#D4B088]"
+      >
+        {musicaSilenciada ? <FiVolumeX size={20} /> : <FiVolume2 size={20} />}
+      </button>
+
       {/* Background burgundy glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_45%,#315b83_0%,#173f6e_30%,#00295C_70%)]" />
 

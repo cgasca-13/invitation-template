@@ -2,6 +2,7 @@ import Hero from "../components/Hero";
 import Date from "../components/Date";
 import Ceremony from "../components/Ceremony";
 import Family from "../components/Family";
+import DressCode from "../components/DressCode";
 import { invitadosCeremonia } from "../data/people";
 
 import ButtonConfirmation from "../components/ButtonConfirmation";
@@ -20,6 +21,7 @@ function Home() {
       {nombreInvitado && <Ceremony nombre={nombreInvitado} />}
       <Date />
       <Family />
+      <DressCode />
       <ButtonConfirmation />
     </main>
   );

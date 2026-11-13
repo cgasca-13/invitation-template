@@ -87,7 +87,7 @@ export default function Date() {
             className="text-center md:text-left"
           >
             <p className="mb-3 text-[10px] uppercase tracking-[0.35em] text-[#faf1e7]/40">
-              Lugar
+              Misa
             </p>
 
             <h2 className="font-serif text-4xl leading-tight text-[#faf1e7] md:text-5xl">

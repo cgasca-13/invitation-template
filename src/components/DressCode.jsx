@@ -4,15 +4,11 @@ import { motion } from "framer-motion";
 function DressCode() {
   return (
     <section
-      className=" 
-  w-full py-12 px-6
-  bg-gradient-to-b 
-  from-[#ead7c0]/80
-  via-[#faf1e7] 
-  to-[#ead7c0]/80
-  text-center
-"
+      className="relative w-full overflow-hidden bg-[#00295C] px-6 py-16 text-center text-[#faf1e7]"
     >
+      <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#173f6e]/50 blur-[100px]" />
+
+      <div className="relative z-10">
       <motion.p
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -20,7 +16,7 @@ function DressCode() {
         viewport={{ once: true }}
         className="text-lg md:text-xl px-6 "
       >
-        <span className="font-serif text-[#00295C] font-semibold">
+        <span className="font-serif font-semibold text-[#D4B088]">
           {" "}
           Código de vestimenta
         </span>
@@ -41,9 +37,9 @@ function DressCode() {
         viewport={{ once: true }}
         className=" md:text-xl px-6 mt-1"
       >
-        <span className="text-lg font-serif text-[#806b57] font-normal">
+        <span className="text-lg font-serif font-normal text-[#faf1e7]/70">
           {" "}
-          Norteña
+          Formal / Elegante
         </span>
       </motion.p>
       <div className="flex justify-center mt-1">
@@ -54,7 +50,7 @@ function DressCode() {
           viewport={{ once: true }}
         />
         <motion.img
-          src="/bg/dressCode.png"
+          src="/bg/dresscode.png"
           alt="Código de vestimenta"
           className="max-w-xs w-full h-auto"
           initial={{ opacity: 0, scale: 0.7, rotate: -10 }}
@@ -70,11 +66,12 @@ function DressCode() {
         viewport={{ once: true }}
         className=" md:text-xl px-6 mt-1"
       >
-        <span className="text-lg font-serif text-[#806b57] font-normal">
+        <span className="text-lg font-serif font-normal text-[#faf1e7]/70">
           {" "}
-          Sombrero o Tejana
+          El color azul marino se reserva únicamente para la quinceañera
         </span>
       </motion.p>
+      </div>
     </section>
   );
 }
