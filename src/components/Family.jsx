@@ -3,6 +3,13 @@ import { motion } from "framer-motion";
 export default function Family() {
   return (
     <section className="relative overflow-hidden bg-[#00295C] px-6 py-20 text-center md:px-12 md:py-28">
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="absolute left-1/2 top-0 h-px w-[80%] origin-center -translate-x-1/2 bg-[#D4B088]/20"
+      />
       <div className="mx-auto grid max-w-5xl gap-16 md:grid-cols-2 md:gap-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

@@ -6,6 +6,14 @@ function DressCode() {
     <section
       className="relative w-full overflow-hidden bg-[#00295C] px-6 py-16 text-center text-[#faf1e7]"
     >
+      <motion.div
+        initial={{ scaleX: 0 }}
+        whileInView={{ scaleX: 1 }}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+        viewport={{ once: true }}
+        className="absolute left-1/2 top-0 h-px w-[80%] origin-center -translate-x-1/2 bg-[#D4B088]/20"
+      />
+
       <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#173f6e]/50 blur-[100px]" />
 
       <div className="relative z-10">
