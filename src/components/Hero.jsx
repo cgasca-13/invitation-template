@@ -23,19 +23,34 @@ export default function Hero() {
 
     audio.volume = 0.6;
 
-    const reproducirMusica = () => {
-      audio.play().catch(() => {
-        // El navegador puede requerir una interacción antes de reproducir audio.
-      });
-    };
-
-    reproducirMusica();
-    window.addEventListener("pointerdown", reproducirMusica, { once: true });
-    window.addEventListener("keydown", reproducirMusica, { once: true });
-
-    return () => {
+    const limpiarReintentos = () => {
+      audio.removeEventListener("canplay", reproducirMusica);
       window.removeEventListener("pointerdown", reproducirMusica);
       window.removeEventListener("keydown", reproducirMusica);
+    };
+
+    const reproducirMusica = () => {
+      if (!audio.paused) {
+        limpiarReintentos();
+        return;
+      }
+
+      const reproduccion = audio.play();
+      if (reproduccion) {
+        reproduccion.then(limpiarReintentos).catch(() => {
+          // El navegador puede requerir una interacción antes de reproducir audio.
+        });
+      }
+    };
+
+    audio.addEventListener("canplay", reproducirMusica);
+    window.addEventListener("pointerdown", reproducirMusica);
+    window.addEventListener("keydown", reproducirMusica);
+    audio.load();
+    reproducirMusica();
+
+    return () => {
+      limpiarReintentos();
       audio.pause();
       audio.currentTime = 0;
     };
@@ -62,7 +77,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-[#00295C] text-[#faf1e7]">
-      <audio ref={audioRef} src={musica} loop preload="auto" />
+      <audio ref={audioRef} src={musica} loop preload="auto" autoPlay />
 
       <button
         type="button"
