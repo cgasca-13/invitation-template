@@ -30,16 +30,23 @@ export default function Hero() {
     };
 
     const reproducirMusica = () => {
-      if (!audio.paused) {
+      if (!audio.paused && !audio.muted) {
         limpiarReintentos();
         return;
       }
 
+      audio.muted = false;
       const reproduccion = audio.play();
       if (reproduccion) {
-        reproduccion.then(limpiarReintentos).catch(() => {
-          // El navegador puede requerir una interacción antes de reproducir audio.
-        });
+        reproduccion
+          .then(limpiarReintentos)
+          .catch(() => {
+            // Los navegadores móviles bloquean el autoplay con sonido.
+            audio.muted = true;
+            audio.play().catch(() => {
+              // El navegador también puede bloquear el autoplay silencioso.
+            });
+          });
       }
     };
 
