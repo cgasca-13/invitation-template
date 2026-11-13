@@ -110,7 +110,7 @@ export default function Date() {
               transition={{ duration: 0.2 }}
               className="mt-7 inline-flex items-center gap-3 border-b border-[#D4B088]/40 pb-2 text-[10px] uppercase tracking-[0.25em] text-[#D4B088]"
             >
-              Ver iglesia en Maps
+              Ver Ubicación
               <span className="text-base">→</span>
             </motion.a>
 
@@ -122,7 +122,9 @@ export default function Date() {
               Salón Los Parajes
               <br />
               <span className="text-3xl text-[#D4B088]/80">
-                Col. Félix Ireta, calle Nardos
+                Col. Félix Ireta
+                <br />
+                Calle Nardos
               </span>
             </h2>
 
@@ -134,7 +136,7 @@ export default function Date() {
               transition={{ duration: 0.2 }}
               className="mt-4 inline-flex items-center gap-3 border-b border-[#D4B088]/40 pb-2 text-[10px] uppercase tracking-[0.25em] text-[#D4B088]"
             >
-              Ver salón en Maps
+              Ver Ubicación
               <span className="text-base">→</span>
             </motion.a>
 
